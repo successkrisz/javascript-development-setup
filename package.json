@@ -4,5 +4,11 @@
   "description": "Tooling setup with sample code for modern JS development",
   "main": "index.js",
   "author": "Krisztian Balla <kriszi.balla@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack -p --config=config/webpack.config.js"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
 }
