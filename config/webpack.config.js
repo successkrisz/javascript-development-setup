@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 const project = require('./project.config')
 
@@ -14,15 +15,21 @@ const entry = PRODUCTION
     `webpack-dev-server/client?http://${project.server_host}:${project.server_port}`
     ]
 
-const plugins = DEVELOPMENT
-  ? [ new webpack.HotModuleReplacementPlugin() ]
-  : []
+const plugins = PRODUCTION
+  ? [ new webpack.optimize.UglifyJsPlugin ]
+  : [ new webpack.HotModuleReplacementPlugin() ]
+
+plugins.push(
+  new HTMLWebpackPlugin({
+    template: 'src/index.html'
+  })
+)
 
 const config = {
   entry: entry,
   output: {
-    filename: 'bundle.js',
-    publicPath: PRODUCTION ? 'dist/' : '/dist/',
+    filename: 'bundle.[hash:12].min.js',
+    publicPath: '',
     path: path.join(__dirname, '..', 'dist')
   },
   module: {
