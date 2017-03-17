@@ -1,13 +1,17 @@
-import './index.css'
-const app = name => {
-  const MOUNT_NODE = document.getElementById('root')
-  const displayName = name || 'World'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-  MOUNT_NODE.innerHTML = `<h1>Hello ${displayName}</h1>`
+import App from './components/App'
+import './index.css'
+
+const render = () => {
+  const MOUNT_NODE = document.getElementById('root')
+
+  ReactDOM.render(<App />, MOUNT_NODE)
 }
 
 // Goooo
-app()
+render()
 
 if (module.hot) {
   module.hot.accept()
