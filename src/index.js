@@ -1,3 +1,4 @@
+import './index.css'
 const app = name => {
   const MOUNT_NODE = document.getElementById('root')
   const displayName = name || 'World'

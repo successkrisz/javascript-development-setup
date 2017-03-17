@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 const project = require('./project.config')
@@ -7,16 +8,18 @@ const project = require('./project.config')
 const DEVELOPMENT  = process.env.NODE_ENV === 'development'
 const PRODUCTION  = process.env.NODE_ENV === 'production'
 
-const entry = PRODUCTION
-  ? ['./src/index.js']
-  : [
-    './src/index.js',
-    'webpack/hot/dev-server',
-    `webpack-dev-server/client?http://${project.server_host}:${project.server_port}`
-    ]
+const entry = ['./src/index.js']
+
+if (DEVELOPMENT) {
+  entry.push('webpack/hot/dev-server')
+  entry.push(`webpack-dev-server/client?http://${project.server_host}:${project.server_port}`)
+}
 
 const plugins = PRODUCTION
-  ? [ new webpack.optimize.UglifyJsPlugin ]
+  ? [
+      new webpack.optimize.UglifyJsPlugin(),
+      new ExtractTextPlugin('style-[contenthash:10].css')
+    ]
   : [ new webpack.HotModuleReplacementPlugin() ]
 
 plugins.push(
@@ -24,6 +27,14 @@ plugins.push(
     template: 'src/index.html'
   })
 )
+
+const cssIdentifier = PRODUCTION ? '[hash:base64:10]':'[path][name]---[local]'
+
+const cssLoader = PRODUCTION
+  ? ExtractTextPlugin.extract({
+    use: 'css-loader?localIdentName=' + cssIdentifier
+    })
+  : [{ loader: 'style-loader' }, { loader: 'css-loader?localIdentName=' + cssIdentifier }]
 
 const config = {
   entry: entry,
@@ -51,6 +62,11 @@ const config = {
             name: 'images/[hash:12].[ext]'
           }
         }]
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: cssLoader
       }
     ]
   },
