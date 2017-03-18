@@ -10,7 +10,13 @@
     "react"
   ],
   "env": {
-    "browser" : true
+    "browser" : true,
+    "mocha"   : true
+  },
+  "globals": {
+    "expect" : false,
+    "should" : false,
+    "sinon"  : false
   },
   "rules": {
     "key-spacing"          : 0,
