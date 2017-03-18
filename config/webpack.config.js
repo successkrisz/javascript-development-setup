@@ -43,6 +43,7 @@ const config = {
     publicPath: '',
     path: path.join(__dirname, '..', 'dist')
   },
+  devtool: PRODUCTION ? false : 'source-map',
   module: {
     rules: [
       {
