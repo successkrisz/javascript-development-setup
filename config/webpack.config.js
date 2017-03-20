@@ -49,9 +49,7 @@ if (__DEV__) {
   )
 }
 
-// Configuring Loaders
-
-// Only the CSS rules before ExtractTextPlugin
+// Configuring CSS Loaders
 const cssName = __PROD__ ? '[hash:base64:10]' : '[path][name]---[local]'
 
 config.module.rules.push(
@@ -60,7 +58,15 @@ config.module.rules.push(
     exclude: /node_modules/,
     use: [
       { loader: 'style-loader' },
-      { loader: `css-loader?localIdentName=${cssName}` },
+      {
+        loader: `css-loader`,
+        options: {
+          localIdentName: cssName,
+          importLoaders: 1,
+          modules: true
+        }
+      },
+      { loader: 'postcss-loader' },
       { loader: 'sass-loader?sourceMap' }
     ]
   },
@@ -69,7 +75,15 @@ config.module.rules.push(
     exclude: /node_modules/,
     use: [
       { loader: 'style-loader' },
-      { loader: `css-loader?localIdentName=${cssName}` }
+      {
+        loader: `css-loader`,
+        options: {
+          localIdentName: cssName,
+          importLoaders: 1,
+          modules: true
+        }
+      },
+      { loader: 'postcss-loader' }
     ]
   }
 )
@@ -77,7 +91,7 @@ config.module.rules.push(
 if (__PROD__) {
   debug('Applying ExtractTextPlugin to CSS loaders')
   config.module.rules = config.module.rules.map(rule => {
-    const loadersToApply = rule.use.slice(1).map(loader => loader.loader)
+    const loadersToApply = rule.use.slice(1)
     rule.use = ExtractTextPlugin.extract({
       fallback: 'style-loader',
       use: loadersToApply
@@ -86,6 +100,7 @@ if (__PROD__) {
   })
 }
 
+// Configuring Loaders
 config.module.rules.push(
   {
     test: /\.jsx?$/,
