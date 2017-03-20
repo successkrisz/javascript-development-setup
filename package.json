@@ -1,6 +1,6 @@
 {
   "name": "javascript-development-setup",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Tooling setup with sample code for modern JS development",
   "main": "index.js",
   "author": "Krisztian Balla <kriszi.balla@gmail.com>",
