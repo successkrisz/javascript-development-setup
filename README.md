@@ -11,6 +11,8 @@ My JavaScript development setup, for modern JS Development
 
  * Babel (ES6+)
  * Webpack 2 (Module bundling, Tree shaking and Lazy loading)
+ * Css-next
+ * Css modules
  * Sass
  * Development Server with HMR enabled
  * Mocha (Testing)
