@@ -1,8 +1,9 @@
 # JavaScript Development Setup
 
+[![Build Status](https://travis-ci.org/successkrisz/javascript-development-setup.svg?branch=master)](https://travis-ci.org/successkrisz/javascript-development-setup)
+[![dependencies](https://david-dm.org/successkrisz/javascript-development-setup.svg)](https://david-dm.org/successkrisz/javascript-development-setup)
+[![devDependency Status](https://david-dm.org/successkrisz/javascript-development-setup/dev-status.svg)](https://david-dm.org/successkrisz/javascript-development-setup#info=devDependencies)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-
-##
 
 My JavaScript development setup, for modern JS Development
 
