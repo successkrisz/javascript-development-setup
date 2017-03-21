@@ -34,6 +34,19 @@ class Todos extends Component {
     }))
   }
 
+  fireAddTodoIfEnterPressed = event => {
+    if (event.keyCode === 13) {
+      this.handleAddTodo()
+    }
+  }
+
+  deleteTodo = id => {
+    this.setState(state => ({
+      ...state,
+      todos: state.todos.filter(todo => todo.id !== id)
+    }))
+  }
+
   render () {
     return (
       <div>
@@ -41,6 +54,7 @@ class Todos extends Component {
         <div>
           <input
             onChange={this.handleInputChange}
+            onKeyUp={this.fireAddTodoIfEnterPressed}
             placeholder='Add Todo'
             value={this.state.input}
             className={input}
@@ -49,7 +63,7 @@ class Todos extends Component {
         </div>
         <div>
           { this.state.todos.map(todo => (
-            <Todo key={todo.id} todo={todo} />
+            <Todo key={todo.id} todo={todo} deleteTodo={this.deleteTodo} />
           )) }
         </div>
       </div>
