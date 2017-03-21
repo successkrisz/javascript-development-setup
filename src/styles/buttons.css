@@ -1,0 +1,20 @@
+@import "./variables.css";
+
+:root {
+  --button-default: {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: var(--color-almost-black);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-almost-black);
+    margin: 3px;
+    transition: all 0.7s;
+    &:hover {
+      cursor: pointer;
+      border-color: var(--color-text-primary);
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+}

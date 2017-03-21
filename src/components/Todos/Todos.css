@@ -1,0 +1,19 @@
+@import "../../styles/variables.css";
+@import "../../styles/buttons.css";
+@import "../../styles/inputs.css";
+
+.button {
+  @apply --button-default;
+}
+.input {
+  @apply --input-default;
+}
+
+.todo {
+  display: inline-block;
+  width: 300px;
+  padding: 1em;
+  background-color: var(--color-text-primary);
+  color: var(--color-almost-black);
+  margin: 1em;
+}

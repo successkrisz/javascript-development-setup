@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './components/App'
-import './index.css'
+import AppContainer from './containers/AppContainer'
 
 const render = () => {
   const MOUNT_NODE = document.getElementById('root')
 
-  ReactDOM.render(<App />, MOUNT_NODE)
+  ReactDOM.render(<AppContainer />, MOUNT_NODE)
 }
 
 // Goooo

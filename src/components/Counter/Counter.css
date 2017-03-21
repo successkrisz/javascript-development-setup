@@ -1,0 +1,12 @@
+@import "../../styles/variables.css";
+@import "../../styles/buttons.css";
+
+.button {
+  @apply --button-default;
+}
+
+.counter {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--color-text-primary);
+}

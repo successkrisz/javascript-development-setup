@@ -1,0 +1,14 @@
+@import "variables.css";
+
+body {
+  background-color: var(--color-bg-darkred);
+  margin: 0;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.appContainer {
+  text-align: center;
+}

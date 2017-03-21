@@ -5,7 +5,7 @@ import chaiAsPromised from 'chai-as-promised'
 import chaiEnzyme from 'chai-enzyme'
 import mockCssModules from 'mock-css-modules'
 
-mockCssModules.register(['.scss'])
+mockCssModules.register(['.scss', '.png'])
 
 chai.use(sinonChai)
 chai.use(chaiAsPromised)

@@ -1,0 +1,21 @@
+@import "./variables.css";
+
+:root {
+  --input-default: {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: var(--color-text-primary);
+    color: var(--color-almost-black);
+    border: 1px solid var(--color-text-primary);
+    margin: 3px;
+    transition: all 0.7s;
+    &:hover {
+      cursor: pointer;
+      border-color: var(--color-almost-black);
+    }
+    &:focus {
+      outline: 2px solid var(--color-almost-black);
+      border: 1px solid var(--color-almost-black);
+    }
+  }
+}

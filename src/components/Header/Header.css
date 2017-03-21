@@ -1,0 +1,32 @@
+@import "../../styles/variables.css";
+
+.header {
+  background: linear-gradient(to bottom, var(--color-black) 0%, var(--color-almost-black) 100%);
+}
+
+.nav {
+  & ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  & li {
+    display: inline;
+    & a {
+      display: inline-block;
+      padding: 1em 2em;
+      transition: all 0.7s;
+      text-decoration: none;
+      color: var(--color-text-primary);
+      &:hover {
+        cursor: pointer;
+        color: var(--color-bg-darkred);
+      }
+    }
+  }
+}
+
+.active {
+  color: var(--color-bg-darkred) !important;
+}
