@@ -14,9 +14,12 @@
     "mocha"   : true
   },
   "globals": {
-    "expect" : false,
-    "should" : false,
-    "sinon"  : false
+    "expect"   : false,
+    "should"   : false,
+    "sinon"    : false,
+    "__DEV__"  : false,
+    "__PROD__" : false,
+    "__TEST__" : false
   },
   "rules": {
     "key-spacing"          : 0,
