@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import Home from './components/Home'
-import Todos from './components/Todos'
+import Todos from './modules/Todos'
 import Counter from './components/Counter'
 
 const Routes = () => (
