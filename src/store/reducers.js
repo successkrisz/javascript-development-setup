@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 import * as fromTodos from '../modules/Todos'
 
 const reducers = combineReducers({
-  todoApp: fromTodos.todoReducer
+  todoApp: fromTodos.todoReducer,
 })
 
 export default reducers

@@ -18,7 +18,7 @@ const AppContainer = ({ store }) => (
 )
 
 AppContainer.propTypes = {
-  store: PropTypes.object.isRequired
+  store: PropTypes.object.isRequired,
 }
 
 export default AppContainer

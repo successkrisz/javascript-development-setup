@@ -16,7 +16,7 @@ describe('(Component) Todos', () => {
       input: '',
       handleInput,
       addTodo,
-      archiveTodo
+      archiveTodo,
     }
     wrapper = shallow(<Todos {...props} />)
   })

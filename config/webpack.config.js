@@ -15,7 +15,7 @@ const config = {
   output: {
     filename: 'bundle.[hash:12].min.js',
     publicPath: '',
-    path: project.paths.dist
+    path: project.paths.dist,
   },
   devtool: 'source-map',
   plugins: [
@@ -23,10 +23,10 @@ const config = {
     new webpack.DefinePlugin({
       __DEV__: __DEV__,
       __PROD__: __PROD__,
-      __TEST__: __TEST__
-    })
+      __TEST__: __TEST__,
+    }),
   ],
-  module: { rules: [] }
+  module: { rules: [] },
 }
 
 // Production Configuration
@@ -63,12 +63,12 @@ config.module.rules.push(
         options: {
           localIdentName: cssName,
           importLoaders: 1,
-          modules: true
-        }
+          modules: true,
+        },
       },
       { loader: 'postcss-loader' },
-      { loader: 'sass-loader?sourceMap' }
-    ]
+      { loader: 'sass-loader?sourceMap' },
+    ],
   },
   {
     test: /\.css$/,
@@ -80,11 +80,11 @@ config.module.rules.push(
         options: {
           localIdentName: cssName,
           importLoaders: 1,
-          modules: true
-        }
+          modules: true,
+        },
       },
-      { loader: 'postcss-loader' }
-    ]
+      { loader: 'postcss-loader' },
+    ],
   }
 )
 
@@ -94,7 +94,7 @@ if (__PROD__) {
     const loadersToApply = rule.use.slice(1)
     rule.use = ExtractTextPlugin.extract({
       fallback: 'style-loader',
-      use: loadersToApply
+      use: loadersToApply,
     })
     return rule
   })
@@ -106,8 +106,8 @@ config.module.rules.push(
     test: /\.jsx?$/,
     exclude: /node_modules/,
     use: [{
-      loader: 'babel-loader'
-    }]
+      loader: 'babel-loader',
+    }],
   },
   {
     test: /\.(woff|png|jpg|gif)$/,
@@ -116,9 +116,9 @@ config.module.rules.push(
       loader: 'url-loader',
       options: {
         limit: 10000,
-        name: 'images/[hash:12].[ext]'
-      }
-    }]
+        name: 'images/[hash:12].[ext]',
+      },
+    }],
   }
 )
 

@@ -7,7 +7,7 @@ describe('(Component) Todo', () => {
   let wrapper, spy
   const todoProps = {
     id: 'id',
-    text: 'Todo'
+    text: 'Todo',
   }
 
   beforeEach(() => {

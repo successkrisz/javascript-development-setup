@@ -6,7 +6,7 @@ import reducer, {
   archiveTodo,
   handleInput,
   getTodos,
-  getInputValue
+  getInputValue,
 } from './todoReducer'
 
 describe('(Redux Module) Todo', () => {
@@ -82,13 +82,13 @@ describe('(Redux Module) Todo', () => {
 
     beforeEach(() => {
       state = {
-        todoApp : reducer(undefined, {})
+        todoApp : reducer(undefined, {}),
       }
       state.todoApp.input = 'some'
       dispatch = sinon.spy((action) => {
         state = {
           ...state,
-          todoApp : reducer(state.counter, action)
+          todoApp : reducer(state.counter, action),
         }
       })
       getState = sinon.spy(() => {
