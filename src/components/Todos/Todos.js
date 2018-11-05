@@ -9,7 +9,7 @@ class Todos extends Component {
     super(props)
     this.state = {
       todos: [],
-      input: ''
+      input: '',
     }
   }
 
@@ -25,12 +25,12 @@ class Todos extends Component {
 
     const newTodo = {
       id: uuid.v4(),
-      text: this.state.input
+      text: this.state.input,
     }
 
     this.setState(state => ({
       todos: [ ...state.todos, newTodo ],
-      input: ''
+      input: '',
     }))
   }
 
@@ -43,7 +43,7 @@ class Todos extends Component {
   deleteTodo = id => {
     this.setState(state => ({
       ...state,
-      todos: state.todos.filter(todo => todo.id !== id)
+      todos: state.todos.filter(todo => todo.id !== id),
     }))
   }
 

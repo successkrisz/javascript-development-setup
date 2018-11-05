@@ -9,8 +9,8 @@ const server = new WebpackDevServer(compiler, {
   filename: config.output.filename,
   publicPath: config.output.publicPath,
   stats: {
-    colors: true
-  }
+    colors: true,
+  },
 })
 
 module.exports = server

@@ -16,8 +16,8 @@ Todo.propTypes = {
   deleteTodo: PropTypes.func.isRequired,
   todo: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
-  })
+    text: PropTypes.string.isRequired,
+  }),
 }
 
 export default Todo

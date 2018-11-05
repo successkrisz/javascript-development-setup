@@ -39,18 +39,18 @@ Todos.propTypes = {
   inputField: PropTypes.string,
   addTodo: PropTypes.func.isRequired,
   archiveTodo: PropTypes.func.isRequired,
-  handleInput: PropTypes.func.isRequired
+  handleInput: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
   todos: state.todoApp.todos,
-  inputField: state.todoApp.input
+  inputField: state.todoApp.input,
 })
 
 const mapDispatchToProps = {
   addTodo,
   archiveTodo,
-  handleInput
+  handleInput,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todos)
